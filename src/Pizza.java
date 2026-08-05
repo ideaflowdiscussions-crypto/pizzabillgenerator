@@ -11,7 +11,7 @@ public class Pizza {
 
 
     public Pizza(boolean vegitable) {
-        this.vegitable = vegitable;
+        this.vegitable=vegitable;
         if(vegitable){
             this.price = 300;
         }
@@ -26,32 +26,37 @@ public class Pizza {
 
     void addToppings(){
         // ....
+        isToppingsAdded=true;
         System.out.println("TOPPING IS ADDED!");
         basePrice+=topping;
     }
 
     void addExtraCheese(){
+        isToppingsAdded = true;
         System.out.println("EXTRA CHEESE IS ADDED!");
-        basePrice = cheese;
+        basePrice += cheese;
     }
 
     void takeAway(){
+        isTakeAway = true;
         System.out.println("TAKE AWAY!");
         basePrice += bag;
         // takeaway
     }
 
     void bill(){
-        System.out.println("BILL: "+basePrice);
+
         if(isCheeseAdded){
             System.out.println("EXTRA CHEESE: "+cheese);
+
         }
         if(isToppingsAdded){
-            System.out.println("EXTRA TOPPINGS: "+isToppingsAdded);
+            System.out.println("EXTRA TOPPINGS: "+topping);
         }
         if(isTakeAway){
             System.out.println("BAG: "+bag);
         }
+        System.out.println("BILL: "+basePrice);
     }
 
     void banner(){
